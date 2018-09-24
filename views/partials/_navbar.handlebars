@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+  <div class="container">
+    <a class="navbar-brand" href="/">Steve's Cool Site</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        {{!-- <li>
+            <a href="/products/shopping-cart/">
+                        <i class="fa fa-shopping-cart" ></i> Shopping Cart
+                        <span >{{session.cart.totalQty}}</span>
+                    </a>
+        </li> --}}
+         <li class="nav-item">
+            <a href="/products/shopping-cart/" class="nav-link"> 
+            <i class="fa fa-shopping-cart">
+              <span class="badge" >{{session.cart.totalQty}}</span> 
+            </i>
+            </a>
+        </li>
+          <li class="nav-item dropdown">
+            
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">Content</a>
+            <div class="dropdown-menu">
+              <a href="/products" class="dropdown-item">Products</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="/users/logout" class="nav-link">Logout</a>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a href="/users/login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/register" class="nav-link">Register</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
